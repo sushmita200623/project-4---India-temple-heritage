@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Bharat | India Temple Heritage</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">
+        🛕 <span>Temple</span> Bharat
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#temples">Temples</a>
+        <a href="#states">States</a>
+        <a href="#festivals">Festivals</a>
+        <a href="#planner">Pilgrimage</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="nav-buttons">
+        <button onclick="toggleDarkMode()">🌙</button>
+        <button onclick="openLogin()">Login</button>
+    </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="small-title">🇮🇳 EXPLORE INDIA'S SACRED HERITAGE</p>
+
+        <h1>
+            Discover India's
+            <span>Temple Heritage</span>
+        </h1>
+
+        <p>
+            Explore ancient temples, sacred places, rich history,
+            architecture, festivals and pilgrimage destinations across India.
+        </p>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search temple, city or state..."
+            >
+            <button onclick="searchTemple()">🔍 Search</button>
+        </div>
+
+        <div class="hero-buttons">
+            <button class="primary-btn" onclick="scrollToSection('temples')">
+                Explore Temples
+            </button>
+
+            <button class="secondary-btn" onclick="scrollToSection('planner')">
+                Plan Pilgrimage
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATS -->
+<section class="stats">
+
+    <div>
+        <h2>500+</h2>
+        <p>Temples</p>
+    </div>
+
+    <div>
+        <h2>28</h2>
+        <p>States</p>
+    </div>
+
+    <div>
+        <h2>100+</h2>
+        <p>Festivals</p>
+    </div>
+
+    <div>
+        <h2>1000+</h2>
+        <p>Years of Heritage</p>
+    </div>
+
+</section>
+
+
+<!-- TEMPLES -->
+<section class="section" id="temples">
+
+    <div class="section-heading">
+        <p>DISCOVER</p>
+        <h2>Popular Temples</h2>
+        <span>Explore India's most iconic spiritual destinations</span>
+    </div>
+
+    <div class="filter-container">
+
+        <select id="stateFilter" onchange="filterTemples()">
+            <option value="all">All States</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Maharashtra">Maharashtra</option>
+        </select>
+
+        <select id="categoryFilter" onchange="filterTemples()">
+            <option value="all">All Categories</option>
+            <option value="Jyotirlinga">Jyotirlinga</option>
+            <option value="Shakti Peetha">Shakti Peetha</option>
+            <option value="Heritage">Heritage</option>
+            <option value="Vaishnav">Vaishnav</option>
+        </select>
+
+    </div>
+
+    <div class="temple-grid" id="templeGrid">
+        <!-- JavaScript cards -->
+    </div>
+
+</section>
+
+
+<!-- STATES -->
+<section class="section states-section" id="states">
+
+    <div class="section-heading">
+        <p>EXPLORE</p>
+        <h2>Temple Heritage by State</h2>
+        <span>Discover sacred destinations across India</span>
+    </div>
+
+    <div class="state-grid">
+
+        <div class="state-card" onclick="selectState('Rajasthan')">
+            <span>🏰</span>
+            <h3>Rajasthan</h3>
+            <p>Temples & Heritage</p>
+        </div>
+
+        <div class="state-card" onclick="selectState('Uttar Pradesh')">
+            <span>🛕</span>
+            <h3>Uttar Pradesh</h3>
+            <p>Holy Cities</p>
+        </div>
+
+        <div class="state-card" onclick="selectState('Tamil Nadu')">
+            <span>🏛️</span>
+            <h3>Tamil Nadu</h3>
+            <p>Dravidian Temples</p>
+        </div>
+
+        <div class="state-card" onclick="selectState('Odisha')">
+            <span>🌊</span>
+            <h3>Odisha</h3>
+            <p>Ancient Temples</p>
+        </div>
+
+        <div class="state-card" onclick="selectState('Uttarakhand')">
+            <span>🏔️</span>
+            <h3>Uttarakhand</h3>
+            <p>Himalayan Temples</p>
+        </div>
+
+        <div class="state-card" onclick="selectState('Maharashtra')">
+            <span>🪔</span>
+            <h3>Maharashtra</h3>
+            <p>Jyotirlingas</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FESTIVALS -->
+<section class="section" id="festivals">
+
+    <div class="section-heading">
+        <p>CELEBRATIONS</p>
+        <h2>Major Temple Festivals</h2>
+        <span>Experience India's colorful spiritual traditions</span>
+    </div>
+
+    <div class="festival-grid">
+
+        <div class="festival-card">
+            <div class="festival-icon">🎡</div>
+            <h3>Rath Yatra</h3>
+            <p>Jagannath Temple, Puri</p>
+            <span>Odisha</span>
+        </div>
+
+        <div class="festival-card">
+            <div class="festival-icon">🪔</div>
+            <h3>Diwali</h3>
+            <p>Ayodhya</p>
+            <span>Uttar Pradesh</span>
+        </div>
+
+        <div class="festival-card">
+            <div class="festival-icon">🌺</div>
+            <h3>Navratri</h3>
+            <p>Shakti Temples</p>
+            <span>Across India</span>
+        </div>
+
+        <div class="festival-card">
+            <div class="festival-icon">🐘</div>
+            <h3>Ganesh Chaturthi</h3>
+            <p>Maharashtra</p>
+            <span>Mumbai & Pune</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PILGRIMAGE PLANNER -->
+<section class="planner" id="planner">
+
+    <div class="planner-content">
+
+        <p>PLAN YOUR JOURNEY</p>
+
+        <h2>Create Your Pilgrimage</h2>
+
+        <p>
+            Select your destination and create a simple pilgrimage plan.
+        </p>
+
+        <div class="planner-box">
+
+            <div>
+                <label>Choose State</label>
+
+                <select id="plannerState">
+                    <option value="">Select State</option>
+                    <option>Uttarakhand</option>
+                    <option>Uttar Pradesh</option>
+                    <option>Odisha</option>
+                    <option>Tamil Nadu</option>
+                    <option>Rajasthan</option>
+                    <option>Maharashtra</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Number of Days</label>
+
+                <select id="days">
+                    <option value="1">1 Day</option>
+                    <option value="2">2 Days</option>
+                    <option value="3">3 Days</option>
+                    <option value="5">5 Days</option>
+                    <option value="7">7 Days</option>
+                </select>
+            </div>
+
+            <button onclick="createPlan()">
+                Create Plan
+            </button>
+
+        </div>
+
+        <div id="planResult"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+
+    <div class="about-text">
+
+        <p>ABOUT PORTAL</p>
+
+        <h2>Preserving India's Sacred Heritage</h2>
+
+        <p>
+            Temple Bharat is an information portal designed to help
+            travelers, pilgrims and heritage enthusiasts discover
+            India's temples and cultural traditions.
+        </p>
+
+        <p>
+            Explore temple history, architecture, festivals,
+            locations and pilgrimage information in one place.
+        </p>
+
+    </div>
+
+    <div class="about-box">
+        <div>🏛️</div>
+        <h3>Heritage</h3>
+        <p>Learn about India's ancient architecture.</p>
+    </div>
+
+    <div class="about-box">
+        <div>🙏</div>
+        <h3>Spirituality</h3>
+        <p>Discover sacred pilgrimage destinations.</p>
+    </div>
+
+    <div class="about-box">
+        <div>📚</div>
+        <h3>Knowledge</h3>
+        <p>Explore history and cultural traditions.</p>
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-logo">
+        🛕 Temple Bharat
+    </div>
+
+    <p>
+        India Temple Heritage & Pilgrimage Information Portal
+    </p>
+
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#temples">Temples</a>
+        <a href="#festivals">Festivals</a>
+        <a href="#planner">Pilgrimage</a>
+    </div>
+
+    <p class="copyright">
+        © 2026 Temple Bharat. Educational Project.
+    </p>
+
+</footer>
+
+
+<!-- TEMPLE DETAILS MODAL -->
+<div class="modal" id="templeModal">
+
+    <div class="modal-content">
+
+        <button class="close" onclick="closeModal()">×</button>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<!-- LOGIN MODAL -->
+<div class="modal" id="loginModal">
+
+    <div class="login-box">
+
+        <button class="close" onclick="closeLogin()">×</button>
+
+        <h2>Welcome Back</h2>
+
+        <p>Login to Temple Bharat</p>
+
+        <input type="email" placeholder="Email">
+
+        <input type="password" placeholder="Password">
+
+        <button onclick="loginUser()">Login</button>
+
+        <p>
+            Don't have an account?
+            <a href="#">Create Account</a>
+        </p>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+

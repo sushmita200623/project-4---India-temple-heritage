@@ -1,0 +1,684 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fffaf3;
+    color: #33251c;
+}
+
+/* NAVBAR */
+
+.navbar {
+    height: 75px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #d85b16;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #33251c;
+    font-weight: 500;
+}
+
+.navbar nav a:hover {
+    color: #d85b16;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-buttons button {
+    border: none;
+    background: #fff0df;
+    padding: 9px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+
+    background:
+        linear-gradient(
+            rgba(50,25,10,0.65),
+            rgba(50,25,10,0.65)
+        ),
+        url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.small-title {
+    letter-spacing: 2px;
+    color: #ffd08a;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #ffb13b;
+}
+
+.hero-content > p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.search-box {
+    display: flex;
+    margin-top: 30px;
+    background: white;
+    padding: 7px;
+    border-radius: 40px;
+    max-width: 650px;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    font-size: 15px;
+}
+
+.search-box button {
+    border: none;
+    background: #d85b16;
+    color: white;
+    padding: 0 25px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 14px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.primary-btn {
+    background: #e86f19;
+    color: white;
+    border: none;
+}
+
+.secondary-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+
+/* STATS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    background: #8e3616;
+    color: white;
+    padding: 30px 8%;
+    text-align: center;
+}
+
+.stats h2 {
+    font-size: 32px;
+}
+
+.stats p {
+    opacity: 0.8;
+}
+
+
+/* GENERAL SECTION */
+
+.section {
+    padding: 80px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading p {
+    color: #d85b16;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.section-heading span {
+    color: #777;
+}
+
+
+/* FILTER */
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.filter-container select {
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    background: white;
+}
+
+
+/* TEMPLE CARDS */
+
+.temple-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.temple-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.temple-card:hover {
+    transform: translateY(-8px);
+}
+
+.temple-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.temple-info {
+    padding: 20px;
+}
+
+.temple-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+}
+
+.temple-info p {
+    color: #777;
+    margin: 8px 0;
+}
+
+.tag {
+    display: inline-block;
+    background: #fff0df;
+    color: #c55213;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.details-btn {
+    margin-top: 15px;
+    border: none;
+    background: #d85b16;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.favorite {
+    float: right;
+    border: none;
+    background: none;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+
+/* STATES */
+
+.states-section {
+    background: #fff2df;
+}
+
+.state-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.state-card {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.state-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.state-card span {
+    font-size: 45px;
+}
+
+.state-card h3 {
+    margin-top: 12px;
+}
+
+.state-card p {
+    color: #777;
+}
+
+
+/* FESTIVALS */
+
+.festival-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.festival-card {
+    padding: 30px 20px;
+    text-align: center;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 7px 20px rgba(0,0,0,0.07);
+}
+
+.festival-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.festival-card h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+.festival-card p {
+    color: #777;
+    margin: 8px 0;
+}
+
+.festival-card span {
+    color: #d85b16;
+    font-size: 13px;
+}
+
+
+/* PLANNER */
+
+.planner {
+    background: linear-gradient(120deg,#8d3515,#c85b17);
+    color: white;
+    padding: 80px 8%;
+}
+
+.planner-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.planner-content > p:first-child {
+    letter-spacing: 2px;
+    color: #ffd28c;
+}
+
+.planner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+    margin: 10px 0;
+}
+
+.planner-box {
+    margin-top: 35px;
+    background: white;
+    color: #333;
+    padding: 25px;
+    border-radius: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 15px;
+    text-align: left;
+}
+
+.planner-box label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.planner-box select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.planner-box button {
+    align-self: end;
+    padding: 12px 20px;
+    border: none;
+    background: #d85b16;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#planResult {
+    margin-top: 25px;
+}
+
+
+/* ABOUT */
+
+.about {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 25px;
+    align-items: center;
+}
+
+.about-text p:first-child {
+    color: #d85b16;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    margin: 10px 0 20px;
+}
+
+.about-text > p {
+    color: #666;
+    line-height: 1.8;
+}
+
+.about-box {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+}
+
+.about-box div {
+    font-size: 40px;
+}
+
+.about-box h3 {
+    margin: 10px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #2b1710;
+    color: white;
+    padding: 45px 8%;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+}
+
+.copyright {
+    color: #aaa;
+    font-size: 13px;
+}
+
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content,
+.login-box {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    padding: 35px;
+    border-radius: 20px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.login-box {
+    max-width: 420px;
+    text-align: center;
+}
+
+.login-box input {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.login-box > button:not(.close) {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    background: #d85b16;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* DARK MODE */
+
+body.dark {
+    background: #18120f;
+    color: #f7eee7;
+}
+
+body.dark .navbar,
+body.dark .temple-card,
+body.dark .festival-card,
+body.dark .state-card,
+body.dark .about-box {
+    background: #271c17;
+    color: white;
+}
+
+body.dark .navbar nav a {
+    color: white;
+}
+
+body.dark .states-section {
+    background: #211712;
+}
+
+body.dark .section-heading span,
+body.dark .temple-info p,
+body.dark .festival-card p,
+body.dark .state-card p {
+    color: #bbb;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .temple-grid,
+    .state-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .festival-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .about {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .navbar {
+        padding: 0 4%;
+    }
+
+    .hero {
+        padding: 60px 5%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        border-radius: 15px;
+    }
+
+    .search-box button {
+        padding: 13px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+    }
+
+    .temple-grid,
+    .state-grid,
+    .festival-grid,
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-container {
+        flex-direction: column;
+    }
+
+    .planner-box {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 60px 5%;
+    }
+
+}
+
